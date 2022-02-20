@@ -26,7 +26,7 @@ However, it is not easy to obtain access to a real-world autonomous driving syst
 
 This project aims to raise concerns over applications of deep neural networks in safety-critical systems, such as autonomous driving. Our objective is to demonstrate that we can attack an object detection system without access to its training set, its model, and the operating system. 
 
-To apply the perturbation to a real-world detection system, we can inject the attack between the camera and the detection system. It proves possible to do this using a raspberry pi 4 that runs Linux [3]. But it takes several seconds to boot the Linux OS, and the efficiency of the attack is undermined because Linux is not a real-time operating system.
+To apply the perturbation to a real-world detection system, we can inject the attack between the camera and the detection system. It proves possible to do this using a raspberry pi 4 that runs Linux [3]. The raspberry pi reads the original video stream from V4L2 devices, and stream the perturbed video data to the detection system as a simulated USB Camera. But this implementation takes several seconds to boot the Linux OS, and the efficiency of the attack is undermined because Linux is not a real-time operating system.
 
 ![](adversarial_camera.png)
 
@@ -36,8 +36,10 @@ RT-Thread Smart, a microkernel operating system, could be a better choice for th
 
 ## Tasks
 
-- V4L2
+To achieve our objective, we need to implement several functionalities:
 
+- V4L2
+- Image Processing
 - UVC Gadget
 
 
