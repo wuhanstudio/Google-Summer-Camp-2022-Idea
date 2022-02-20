@@ -36,11 +36,11 @@ RT-Thread Smart, a microkernel operating system, could be a better choice for th
 
 ## Tasks
 
-To achieve our objective, we need to implement several functionalities:
+To achieve our objective, we need to implement several functionalities on RT-Thread Smart:
 
-- V4L2
-- Image Processing
-- UVC Gadget
+- Read raw video stream from a MJPEG USB Camera (720p / 1080p).
+- Image Processing (OpenCV).
+- Simulate a USB Camera using USB Gadget and stream the perturbed video data.
 
 
 
